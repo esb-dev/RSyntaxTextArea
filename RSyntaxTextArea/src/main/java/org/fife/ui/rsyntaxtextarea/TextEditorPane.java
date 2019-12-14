@@ -349,6 +349,14 @@ public class TextEditorPane extends RSyntaxTextArea implements
 
 	}
 
+	/* Hack br 2019-12-14
+		allows to use a given TextEditorPane for a new,  not yet saved file
+	 */
+	public void reInit() {
+		this.loc = FileLocation.create(DEFAULT_FILE_NAME);
+		lastSaveOrLoadTime = LAST_MODIFIED_UNKNOWN;
+	}
+
 
 	/**
 	 * Callback for when text is inserted into the document.
