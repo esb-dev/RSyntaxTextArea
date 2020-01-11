@@ -45,7 +45,11 @@ public class RSyntaxTextAreaDefaultInputMap extends RTADefaultInputMap {
 
 		put(KeyStroke.getKeyStroke('/'), 									RSyntaxTextAreaEditorKit.rstaCloseMarkupTagAction);
 		int os = RSyntaxUtilities.getOS();
-		if (os==RSyntaxUtilities.OS_WINDOWS || os==RSyntaxUtilities.OS_MAC_OSX) {
+		// Hack br
+		// The keyevent VK_SLASH depends of the keyborad layout. On a german keyboard
+		// SLASH is at the position of MINUS and MINUS is at the position of ß on an
+		// american keyboard!!
+		//if (os==RSyntaxUtilities.OS_WINDOWS || os==RSyntaxUtilities.OS_MAC_OSX) {
 			// *nix causes trouble with CloseMarkupTagAction and ToggleCommentAction.
 			// It triggers both KEY_PRESSED ctrl+'/' and KEY_TYPED '/' events when the
 			// user presses ctrl+'/', but Windows and OS X do not.  If we try to "move"
@@ -56,8 +60,8 @@ public class RSyntaxTextAreaDefaultInputMap extends RTADefaultInputMap {
 			// different OSes & keyboard layouts, we do the simplest thing and
 			// (unfortunately) don't have a ToggleCommentAction for *nix out-of-the-box.
 			// Applications can add one easily enough if they want one.
-			put(KeyStroke.getKeyStroke(KeyEvent.VK_SLASH, defaultMod),		RSyntaxTextAreaEditorKit.rstaToggleCommentAction);
-		}
+		//	put(KeyStroke.getKeyStroke(KeyEvent.VK_SLASH, defaultMod),		RSyntaxTextAreaEditorKit.rstaToggleCommentAction);
+		//}
 
 		put(KeyStroke.getKeyStroke(KeyEvent.VK_OPEN_BRACKET, defaultMod),	RSyntaxTextAreaEditorKit.rstaGoToMatchingBracketAction);
 		put(KeyStroke.getKeyStroke(KeyEvent.VK_SUBTRACT, defaultMod),		RSyntaxTextAreaEditorKit.rstaCollapseFoldAction);
