@@ -51,7 +51,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -78,7 +78,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -104,7 +104,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -142,7 +142,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -187,10 +187,8 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 
 	@Test
 	public void testEolComments() {
-		String[] eolCommentLiterals = {
-			"// Hello world",
-		};
-		assertAllTokensOfType(eolCommentLiterals, TokenTypes.COMMENT_EOL);
+		assertAllTokensOfType(TokenTypes.COMMENT_EOL,
+			"// Hello world");
 	}
 
 
@@ -256,8 +254,17 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
+	}
+
+
+	@Test
+	@Override
+	public void testGetLineCommentStartAndEnd() {
+		String[] startAndEnd = createTokenMaker().getLineCommentStartAndEnd(0);
+		Assert.assertEquals("//", startAndEnd[0]);
+		Assert.assertNull(null, startAndEnd[1]);
 	}
 
 
@@ -287,7 +294,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -424,14 +431,14 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 		segment = createSegment("return");
 		token = tm.getTokenList(segment, TokenTypes.NULL, 0);
 		Assert.assertEquals("return", token.getLexeme());
 		Assert.assertEquals(TokenTypes.RESERVED_WORD_2, token.getType());
 		token = token.getNextToken();
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -504,7 +511,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -532,7 +539,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 
@@ -560,7 +567,7 @@ public class JavaTokenMakerTest extends AbstractTokenMakerTest2 {
 			token = token.getNextToken();
 		}
 
-		Assert.assertTrue(token.getType() == TokenTypes.NULL);
+		Assert.assertEquals(TokenTypes.NULL, token.getType());
 
 	}
 

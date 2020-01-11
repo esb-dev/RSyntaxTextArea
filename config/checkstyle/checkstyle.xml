@@ -58,7 +58,7 @@
     <!-- Checks that property files contain the same keys.         -->
     <!-- See http://checkstyle.sf.net/config_misc.html#Translation -->
     <module name="Translation"/>
-    
+
     <!-- Checks for Size Violations.                    -->
     <!-- See http://checkstyle.sf.net/config_sizes.html -->
     <module name="FileLength">
@@ -106,6 +106,7 @@
 		-->
         <module name="JavadocStyle"/>
 
+        <module name="JavadocContentLocationCheck"/>
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
@@ -211,9 +212,9 @@
         <module name="UpperEll"/>
 
     </module>
-	
+
 	<module name="SuppressionFilter">
-		<property name="file" value="config/checkstyle/rstaSuppressions.xml"/>
+		<property name="file" value="${config_loc}/rstaSuppressions.xml"/>
 	</module>
 
 </module>
