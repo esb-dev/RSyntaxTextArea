@@ -1,2 +1,2 @@
 # store patches seesaw lib in local repo
-lein localrepo install ./RSyntaxTextArea/build/libs/rsyntaxtextarea-3.0.5z.jar rsyntaxtextarea 3.0.5z
+lein localrepo install ./RSyntaxTextArea/build/libs/rsyntaxtextarea-3.0.9z.jar rsyntaxtextarea 3.0.9z
