@@ -717,7 +717,8 @@ private boolean fractionalFontMetricsEnabled;
 	@Override
 	protected JPopupMenu createPopupMenu() {
 		JPopupMenu popup = super.createPopupMenu();
-		// Hack br no folding menu
+		// == Hack esb-dev ==
+		// disable the folding menu in editor
 		// appendFoldingMenu(popup);
 		return popup;
 	}

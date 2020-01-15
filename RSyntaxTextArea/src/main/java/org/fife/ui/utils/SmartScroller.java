@@ -1,5 +1,5 @@
 /*
- * SmartScroller.java - Scroll texdtarea when new data is addes
+ * SmartScroller.java - Scroll textarea when new data is added
  * by Rob Camick, see https://tips4java.wordpress.com/2013/03/03/smart-scrolling/
  */
 

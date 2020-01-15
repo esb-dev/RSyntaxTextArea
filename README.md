@@ -1,4 +1,32 @@
 # RSyntaxTextArea
+
+# Remark
+This is a patched version of RSyntaxArea fur use in [lwb-gui](https://github.com/esb-lwb/lwb-gui).
+
+The changes are marked by the tag "== Hack esb-dev ==".
+
+### Changes
+
+1. A new folder utils in org.fife.ui with two classes: RecentFilesMenu (from https://github.com/bobbylight/FifeCommon) and SmartScroller
+   by Rob Camick, see https://tips4java.wordpress.com/2013/03/03/smart-scrolling/. I've put the classes into this library for convenience.
+ 
+2. Disabled VK_SLASH in RSyntaxTextAreaDefaultInputMap.java.
+   VK_SLASH depends oo the keyboard layout. On a german keyboard SLASH is at the position of MINUS and 
+   MINUS is at the position of ß on an american keyboard
+   
+3. A a new function reInit in TextEditorPane.java that allows to use a given TextEditorPane with a new, not yet saved file.   
+
+4. Disabled the folding menu in editor in RSyntaxTextArea.java.
+
+5. Set version to "3.0.9-esb-dev" and created script localrepo to put the lib into the ,local maven repo.
+
+### How to build
+
+1. Gradle Tasks build jar
+
+2. localrepo
+
+
 [![Build Status](https://travis-ci.org/bobbylight/RSyntaxTextArea.svg?branch=master)](https://travis-ci.org/bobbylight/RSyntaxTextArea)
 [![Coverage Status](https://coveralls.io/repos/bobbylight/RSyntaxTextArea/badge.svg)](https://coveralls.io/r/bobbylight/RSyntaxTextArea)
 

@@ -1,2 +1,3 @@
-# store patches seesaw lib in local repo
-lein localrepo install ./RSyntaxTextArea/build/libs/rsyntaxtextarea-3.0.9z.jar rsyntaxtextarea 3.0.9z
+# stores patched lib in local repo
+lein localrepo install ./RSyntaxTextArea/build/libs/rsyntaxtextarea-3.0.9-esb-dev.jar rsyntaxtextarea 3.0.9-esb-dev
+echo "installed rsyntaxtextarea 3.0.9-esb-dev in local repo"

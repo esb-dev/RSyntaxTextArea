@@ -45,8 +45,8 @@ public class RSyntaxTextAreaDefaultInputMap extends RTADefaultInputMap {
 
 		put(KeyStroke.getKeyStroke('/'), 									RSyntaxTextAreaEditorKit.rstaCloseMarkupTagAction);
 		int os = RSyntaxUtilities.getOS();
-		// Hack br
-		// The keyevent VK_SLASH depends of the keyborad layout. On a german keyboard
+		// == Hack esb-dev ==
+		// The keyevent VK_SLASH depends of the keyboard layout. On a german keyboard
 		// SLASH is at the position of MINUS and MINUS is at the position of ß on an
 		// american keyboard!!
 		//if (os==RSyntaxUtilities.OS_WINDOWS || os==RSyntaxUtilities.OS_MAC_OSX) {
