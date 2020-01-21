@@ -1,6 +1,6 @@
 /*
  * Toast.java - Java program that creates the toast message
- * from https://www.geeksforgeeks.org/java-swing-creating-toast-message/
+ * from https://www.javatips.net/
  */
 
 package org.fife.ui.utils;
